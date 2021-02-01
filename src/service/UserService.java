@@ -23,13 +23,18 @@ public class UserService {
         scanner =new Scanner(System.in);
     }
 
-    public User addUser() {
+    public User addUser() throws MovieReviewException {
         System.out.println("To Add User, please enter the Name:");
         User user = new User();
         String name = scanner.nextLine();
         user.setName(name);
         user.setPassword(ApplicationConfig.getDefaultPassword());
         user.setRole(ApplicationConfig.getDefaultRole());
+
+        if(findByUserName(name) != null){
+            throw new MovieReviewException("user with name: "+ name + " already exists!");
+        }
+
         users.add(user);
         return user;
     }

@@ -104,6 +104,12 @@ public class MovieReviewSystem {
         movieService.addMovie(new Movie("Metro",Genre.ROMANCE, LocalDate.of(2006,01,01)));
 
 
+        /*
+         * dummy data without any validation
+         * so setting both score and computed score
+         * in case of normal flow application will take care of multiplying
+         * score by the level of user eg: CRITIC (2x), etc.,
+         */
         Review review = new Review("SRK", "Don", 2d);
         reviewService.addReview(review);
         Review review2 = new Review("SRK", "Padmavaat", 8d);

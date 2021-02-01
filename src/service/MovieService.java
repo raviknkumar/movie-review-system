@@ -245,7 +245,7 @@ public class MovieService {
         o: for (Map.Entry<Double, List<Movie>> ratingToMovieList : scoreToMovieMap.entrySet()) {
             List<Movie> movieList = ratingToMovieList.getValue();
             for(Movie movie : movieList){
-                System.out.println("MovieName: "+ movie + ", Rating: "+ ratingToMovieList.getKey());
+                System.out.println("MovieName: "+ movie.getName() + ", Rating: "+ ratingToMovieList.getKey());
                 cnt++;
                 if(n != null && cnt > n)
                     break o;
